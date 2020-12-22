@@ -1,0 +1,302 @@
+\documentclass{article}
+\usepackage{enumitem}
+\newlist{abbrv}{itemize}{1}
+\setlist[abbrv,1]{label=,labelwidth=1in,align=parleft,itemsep=0.1\baselineskip,leftmargin=!}
+\usepackage{graphicx}
+\title{E-Commerce Site}
+\date{\today}
+
+\begin{document}
+	\maketitle
+Submitted by:
+\begin{enumerate}
+\item Mrinal Singh 2017UGCS010R
+\item Neha Patel 2017UGCS011R
+\item Srishti Suverna Baraik 2017UGCS021R
+\item Anjali Dubey 2017UGCS047R
+\item Supriya Rani 2017UGCS056R
+\end{enumerate}
+	\newpage
+\tableofcontents
+	\newpage
+	\section{Introduction}
+	
+	\subsection{Purpose}
+	The purpose of this document is to describe the requirements for the E-Commerce Site(ECS).  The intended audience includes all stakeholders in the potential system. These include  the following: Administrator, developers, customers.
+
+           Developers should consult this document and its revisions as the only source of requirements for the project. They should not consider any requirements statements, written or verbal as valid until they appear in this document or its revision.
+
+\subsection{Scope}
+  The proposed software product is the E-Commerce site(ECS).The system, a web application will be used to cater day-to-day grocery needs. It is intended to act as a  virtual supermarket, providing hassle free shopping experience to its customers,door step delivery of the products..Requirements statements in this document are both functional and non-functional.
+\subsection{Definitions, Acronyms, and Abbreviations }
+  
+\begin{abbrv}
+\item[ECS] E-Commerce Site
+\item[HTTP]HyperText Transfer Protocol  
+\item[HTTPS]Hypertext Transfer Protocol Secure
+\item[SRS] Software Requirements Specification
+\item[Web Based Apllication] An application that runs on the internet.
+\vspace{1cm}
+\item[Administrator] A person responsible for managing the site and all the activities associated with it.
+\item[Customers] People  who will buy products from the site
+\item[Visitors] People who just occasionally visit the site without the intention to buy anything
+\end{abbrv}
+\subsection{References}
+\begin{enumerate}
+\item Software Engineering by Dr. Rajib Mall
+\item Demo SRS of Hospital Management System provided by Jaydeep Pati Sir
+\end{enumerate}
+		
+
+\section{Overall Description}
+\subsection{Product Perspective}
+The ECS is a web based product, which will be used by many users such as the seller, the retailer and the customer. ECS should be user friendly,interactive and reliable software for the above purpose. It should run on every platform.
+
+\subsection{User Characterstics}
+\subsubsection{Adminstrator}
+The adminstrator is responsible for  following:
+
+ maintaing all the databases associated with the site like customer information ,product and stock management,order shipment, delivery, payment collection etc.
+
+\subsubsection{Customers/Visitors}
+Functionalities of the customers/visitor includes:
+\begin{enumerate}
+\item Browsing  through the site, choosing products and placing them  in virtual shopping cart.
+\item To proceed with purchase, the customer is promoted to login.
+\item Also, the customer can modify personal profile information stated by application.
+\item The customer can also view the status of any previous orders and cancel any order that has not been shipped yet.
+\end{enumerate}
+
+
+
+\subsection{General Constraints}
+\begin{enumerate}
+\item Limited to HTTP/HTTPS
+\item No multilingual support.
+\item If the shopping cart value is below Rs. 500, shipping charges will be applicable. 
+\end{enumerate}
+\subsection{Operating Environment}
+The ECS is a website that shall operate in all Browser and all the processors which support Internet Browsing.
+\subsection{Assumptions and Dependencies}
+\begin{enumerate}
+\item Users of  the software are familiar with shopping terminologies like shopping cart/checking out/transaction/shipping
+\item The customers have computers with a browser and are familiar with internet.
+\end{enumerate}
+\section{Specific Requirement} 
+\subsection{External Interface Requirement}
+External Interface requirements refers to needs of this software’s front end to work efficiently, the requirements are further classified into certain topics, which are as:
+\subsubsection{User Interface}
+For the efficient working of the User Interface, i.e. the Front End of the system, the OS must be having at least Internet Explorer 8 installed. To log into the website.
+\subsubsection{Hardware Interface}
+For the hardware requirements, the SRS specifies the logical characteristics of each interface between the software product and the hardware components. It specifies the hardware requirements like memory restriction, cache size, processor, RAM etc. those are required for software to run.
+Minimum Hardware Requirements:
+\begin{enumerate}
+\item Processor Pentium IV
+\item HDD 40 GB
+\item RAM 128 MB
+\item Cache 512 kb
+\end{enumerate}
+
+Preferred Hardware Requirements:
+\begin{enumerate}
+\item Intel Core i3 (or any latest one)
+\item HDD 100 GB
+\item RAM 2 GB
+\item Cache 6  MB 
+\end{enumerate}
+\subsubsection{Software Interface}
+\begin{enumerate}
+\item For Hosting: Any Windows or Linux Operating System and Visual Studio Code for development. A working internet connection is  mandatory.
+\item For Using: Any type of Operating System with at Least Internet Explorer installed and having minimum of 512 kbps working internet compulsorily.
+\end{enumerate}
+\subsubsection{Communication Interfaces}
+This e-commerce website , offers a mini chatbot to interact with customers , for e.g. , record complaints from customers , getting feedbacks from customers , etc. We are using STRIPE for payment and POSTMAN  for sign up.
+\subsection{Functional Requirements}
+\subsubsection{Registration}
+New users can register themselves on the online website with their credentials to login. Already registered customers can directly login for futher use.
+\subsubsection{Cart}
+Users can browse their cart for  viewing the product list as well as add or delete products to the cart. Cart will be used to keep a track of user's product choices.
+\subsubsection{Login}
+Users can login to the website by entering their credentials.
+\subsubsection{Receive Order}
+After confirmation of order for the customer, the order is received.
+\subsubsection{Payment collection}
+Customer will be provided various methods for  payment following which the customer will be provided with invoice and statement.
+\subsubsection{Shipping items}
+Once the order is confirmed by the Shipping agent the items are shipped to the customer.
+
+The user can login,add or remove items to car and register as well as pay. Admin can have privileged login and they can change or modify the catalogue as well as maintain user data. After adding items to cart they can make order. The orders are stored in ordered database. The orders are processed and items from the warehouse are delivered to customer by shipping agent.
+
+\subsection{Logical Database Requirement}
+\begin{enumerate}
+\item Profile: Database of all the users accessing the system that includes their information like email id, password,phone number and other details
+\item Order: It is the database of all the order the  site or the administrator has 
+\item Shopping Cart: Contains the products that the customer is planning to purchase. Entities can be added to or removed from the cart.
+\item Warehouse : Database of all the warehouses.
+\item Invoices: It contains the information regarding billing.
+\item Transaction : Payment information of all the customers.
+\item Product Database: The database will contain information regarding product availabilty, stock  etc.
+\item Catalogue: It is the brochure containing the all the products the system has to offer its customer.
+\end{enumerate}
+\subsection{Design Constraint} 
+The software is a web based application
+\subsection{Non Functional Requirement}
+\subsubsection{Security}
+Only the administrator has the authority to edit details in Users and
+item tables. No one can enter the system without a username and
+password.
+\begin{enumerate}
+\item Administrator Identification (Login ID): The system requires the administrator  to
+identify himself /herself.
+\item User Identification (Login ID): System requires user to register
+to purchase the book.
+\item Modification: Any modification (insert, delete, update) for the
+Database shall be synchronized and done only by the
+administrator.
+\item Administrator  shall be able to view and modify all information associated with the system.
+\item System will have different users and every user has access
+constraints.
+\item Normal Users/Viewers can only read information but cannot
+       edit/modify anything.
+\end{enumerate}
+
+\subsubsection{Performance Requirements}
+\begin{enumerate}
+\item Good working pc with all the requirements. 
+\item  Works for medium size information databases. 
+\item   System Should not be overloaded. 
+\item  Response System:  The response time to view information shall not 
+be more than 3 seconds to appear on the screen. 
+\item The time for search a product  will not be more than 3 seconds. 
+\item The time to print the stock evaluation will not be more than 3 
+seconds. 
+\item The time taken to update the database or to get information from 
+the database will not be more than 2 seconds. 
+\item  The time taken to prompt the message box will not be more than 2 
+seconds. 
+\item  Capacity:  System shall accommodate high number of items and 
+users without any fault. 
+\item User-interface:  The user-interface screen shall respond within 5 
+seconds. 
+\item  Conformity : The systems must conform to the Microsoft 
+Accessibility guidelines. 
+\end{enumerate}
+\subsubsection{Maintainability}
+To make the  maintainence of  the system easy for  the ECS
+Administrator ,the user manual and the system manual is provided at
+the delivery. Each module is designed independently so that any
+change of a request can be modified easily.
+\begin{enumerate}
+\item  Back Up: The system shall provide the capability to back up the 
+Data. 
+\item  Errors: The system shall keep a log of all the errors. ECS  shall 
+handle expected and non-expected errors in ways that prevent loss in 
+information and long downtime period
+\end{enumerate}
+\subsubsection {Reliability}
+System is thoroughly tested at the time of delivery so that
+computational errors are minimised.
+\subsubsection{Availabilty}
+The system should be available all the time.
+\subsubsection{Safety Requirements}
+\begin{enumerate}
+\item Except visitors all other users of the software shall have Login ID and password.
+\item Personal information of all the customers will be kept confidential.
+\end{enumerate}
+
+
+
+\section{Conclusion}
+\begin{table}[h!]
+\begin{center}
+\caption{E-Commerce Site}
+\label{tab:table1}
+\begin{tabular}{|l|c|r|}
+\hline
+\textbf{Serial No.}&\textbf{Role}&\textbf{Responsibilty}\\
+\hline
+1.  &Administrator &Maintenance of database of customers and product\\
+2. &Customer &Buy products from e-commerce site\\
+3. &Visitor &Surfs through the e-commerce site\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+\newpage
+\section{Data Dictionary}
+\begin{enumerate}
+\item Item: String
+\item Quantity: Integer
+\item Price: integer
+\item Customer- ID: Integer
+\item Customer-Name: String
+\item House No. : String
+ \item Street No : String
+\item City: String
+\item Pin: Integer
+\item Date: year+ month +day
+\item Year: Integer
+\item Month: Integer
+\item Day: Integer
+\item Order : Customer-ID +{ items+ quantity} + order No.
+\item Order no. : Integer /*unique order no generated by the program*/
+\item Bill : { Item+ quantity + price} +total amount+ customer address+ order no.
+\item Customer address : Name+ house no. + street no. + city + pin
+\item Total amount : Integer
+\end{enumerate}
+\section{Design Methodologies}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{DFD_LEVEL0.png}
+\caption{Context Diagram}
+\vspace{2cm}
+\includegraphics[width=\linewidth]{1.png}
+\caption{DFD Level 1}
+\vspace{2cm}
+
+\end{figure}
+\begin{figure}
+\includegraphics[width=\linewidth]{DFD_LEVEL2_CART.png}
+\caption{ DFD Level 2: Cart}
+\vspace{2cm}
+\end{figure}
+\begin{figure}
+\includegraphics[width=\linewidth]{registration.png}
+\caption{DFD Level 2:Registration}
+
+
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Maintenance.png}
+\caption{ DFD Level 2: Maintenance}
+\vspace{2cm}
+\includegraphics[width=\linewidth]{profile handling.png}
+\caption{DFD Level 2:Profile handling}
+\vspace{2cm}
+\end{figure}
+\begin{figure}
+\includegraphics [width=\linewidth]{Transaction.png}
+\caption{DFD  Level2:Physical Transaction }
+
+\vspace{2cm}
+\includegraphics[width=\linewidth]{Level2_Login.png}
+\caption{ DFD Level 2: Login}
+\vspace{2cm}
+\end{figure}
+\begin{figure}
+\includegraphics[width=\linewidth]{Intimation.png}
+\caption{DFD Level 2: Intimation}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Structure chart.png}
+\caption{ Structure Chart Customer Related Activities}
+\vspace{2cm}
+\includegraphics[width=\linewidth]{STRUCTURED_CHART2.png}
+\caption{Structure Chart Administrative Related Activities}
+\end{figure}
+
+
+\end{document}
+
